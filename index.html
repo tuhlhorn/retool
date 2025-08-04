@@ -1,1 +1,773 @@
-dffddfdf
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom Uhlhorn | Marketing Lead EMEA - Retool</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #3B5EF7;
+            --primary-dark: #2442D4;
+            --dark: #1C2333;
+            --gray-900: #1F2937;
+            --gray-700: #374151;
+            --gray-500: #6B7280;
+            --gray-300: #D1D5DB;
+            --gray-100: #F3F4F6;
+            --white: #FFFFFF;
+            --gradient: linear-gradient(135deg, #3B5EF7 0%, #5B8DEF 100%);
+            --success: #10B981;
+            --warning: #F59E0B;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(to bottom, var(--gray-100), var(--white));
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(59, 94, 247, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-text h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            margin-bottom: 2rem;
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .stat-label {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+        
+        /* Cover Letter Section */
+        .cover-letter {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+        
+        .letter-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .letter-container h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .letter-content {
+            background: var(--gray-100);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .letter-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .letter-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .letter-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .letter-content li {
+            margin-bottom: 0.75rem;
+            line-height: 1.8;
+        }
+        
+        .signature {
+            margin-top: 2rem;
+            font-style: italic;
+        }
+        
+        /* Campaign Showcase */
+        .campaigns {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .campaign-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .campaign-card {
+            background: var(--gray-100);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .campaign-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+            transform-origin: left;
+        }
+        
+        .campaign-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .campaign-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .campaign-company {
+            font-size: 0.875rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .campaign-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .campaign-metrics {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .metric {
+            background: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .metric.success {
+            color: var(--success);
+            background: rgba(16, 185, 129, 0.1);
+        }
+        
+        .metric.warning {
+            color: var(--warning);
+            background: rgba(245, 158, 11, 0.1);
+        }
+        
+        /* Skills Section */
+        .skills {
+            padding: 5rem 2rem;
+            background: var(--gray-100);
+        }
+        
+        .skills-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-category h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .skill-tag {
+            background: var(--gray-100);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            color: var(--gray-700);
+        }
+        
+        /* Interactive Chart */
+        .chart-section {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+        
+        .chart-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--gray-100);
+            padding: 2rem;
+            border-radius: 16px;
+        }
+        
+        #performanceChart {
+            max-width: 100%;
+            height: 400px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 5rem 2rem;
+            background: var(--gradient);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Tom Uhlhorn × Retool</div>
+            <ul class="nav-links">
+                <li><a href="#letter">Cover Letter</a></li>
+                <li><a href="#campaigns">Campaigns</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#performance">Performance</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text fade-in">
+                <h1>Building Revenue Engines for EMEA</h1>
+                <h2>13+ years scaling B2B SaaS from startup to $40M ARR</h2>
+                <p>AI pioneer since day one. Created personalized ABM microsites that landed OpenAI as a customer. Ready to show Europe the transformative power of Retool.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">YoY ARR Growth</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">46%</div>
+                        <div class="stat-label">Pipeline Increase</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">92%</div>
+                        <div class="stat-label">Revenue Influenced</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- Interactive element would go here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cover Letter Section -->
+    <section id="letter" class="cover-letter">
+        <div class="letter-container fade-in">
+            <h2>Cover Letter</h2>
+            <div class="letter-content">
+                <p>Dear Retool Hiring Team,</p>
+
+                <p>Your mission to bring good software to everyone deeply resonates with me. As someone who's spent 13+ years scaling B2B SaaS companies from startup to $40M ARR, I understand the transformative power of software and systems.</p>
+
+                <p>And as someone who has adopted GenAI since day one to create personalised ABM microsites that have generated opportunities with companies like OpenAI, campaigns that halve the sales cycle, and processes that 5x the output of my team, I'm excited about the opportunity to help Retool give the world the ability to build and deploy software that increases quality, speed, and capabilities.</p>
+
+                <p>Your ideal candidate is "equal parts strategist, builder, and doer", that's precisely how I approach marketing leadership. Here's how my experience aligns with your needs:</p>
+
+                <h3>Regional Marketing Excellence</h3>
+                <ul>
+                    <li>At SpotMe, I transformed marketing performance in multiple regions, achieving a 46% increase in marketing-attributed pipeline while reducing spend by 23%.</li>
+                    <li>Built InvestorHub's entire marketing function from inception, scaling to 100% YoY growth for 2.5 consecutive years.</li>
+                    <li>Founded and scaled a consultancy serving clients across three continents, demonstrating deep understanding of regional market nuances.</li>
+                </ul>
+
+                <h3>Technical Product Marketing</h3>
+                <ul>
+                    <li>Successfully marketed complex B2B SaaS platforms to technical audiences (event technology at SpotMe, FinTech at InvestorHub).</li>
+                    <li>Pioneered AI-driven ABM strategies, building $2M+ in pipeline for a deeply technical product in SpotMe.</li>
+                    <li>Deep experience with marketing automation, APIs, and technical integrations: I speak the language of your buyers.</li>
+                </ul>
+
+                <h3>Field Marketing & Demand Generation</h3>
+                <ul>
+                    <li>At SpotMe, I identified that events and field marketing were our most effective channels, reallocating budget to exceed pipeline targets by 9.6%.</li>
+                    <li>Created the "Direct-to-Investor Marketing" category at InvestorHub, reducing sales cycles by 50% through strategic positioning.</li>
+                    <li>Created a fortnightly event schedule at InvestorHub, which influenced 44% of annual revenue whilst maintaining a growth rate of 100% ARR.</li>
+                    <li>Proven track record of aligning marketing directly with revenue, influencing 92% of revenue at InvestorHub.</li>
+                </ul>
+
+                <h3>Player/Coach Mentality</h3>
+                <ul>
+                    <li>Built and led distributed teams across multiple time zones while maintaining hands-on involvement.</li>
+                    <li>Comfortable setting strategy one day and executing campaigns the next.</li>
+                    <li>Experience managing contractors and building high-performing teams from scratch.</li>
+                </ul>
+
+                <h3>What I'll Bring to Retool</h3>
+                <p><strong>Immediate Impact</strong>: I'll leverage my experience to quickly establish field marketing programs that generate pipeline from day one. My data-driven approach means every pound spent will be optimized for EMEA market dynamics.</p>
+                <p><strong>Strategic Vision</strong>: I'll develop a comprehensive EMEA marketing strategy that balances global consistency with local relevance, ensuring Retool's message resonates across diverse European markets.</p>
+                <p><strong>Revenue Alignment</strong>: Having worked closely with and in sales teams throughout my career, I'll ensure marketing efforts directly support pipeline generation and acceleration, not just vanity metrics.</p>
+                <p><strong>AI-Powered Innovation</strong>: I'll bring cutting-edge approaches like AI-driven personalization and dynamic microsites to show the power of Retool.</p>
+
+                <p>I'd love to discuss how my experience building predictable revenue engines, combined with my passion for technical products, can accelerate Retool's growth in EMEA. Thank you for considering my application.</p>
+
+                <p class="signature">
+                    Best regards,<br>
+                    Tom Uhlhorn<br>
+                    tom.uhlhorn@gmail.com<br>
+                    +44 7496 428 502
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campaign Showcase -->
+    <section id="campaigns" class="campaigns">
+        <div class="section-header fade-in">
+            <h2>Proven Campaign Excellence</h2>
+            <p>Real results from strategic thinking and hands-on execution</p>
+        </div>
+        
+        <div class="campaign-grid">
+            <div class="campaign-card fade-in">
+                <div class="campaign-company">SPOTME</div>
+                <h3 class="campaign-title">Marketing Attribution Transformation</h3>
+                <p>Identified events as top channel through data analysis, reallocated budget from paid channels, and built predictable pipeline engine.</p>
+                <div class="campaign-metrics">
+                    <span class="metric success">+46% Pipeline</span>
+                    <span class="metric success">-23% Spend</span>
+                </div>
+            </div>
+            
+            <div class="campaign-card fade-in">
+                <div class="campaign-company">INVESTORHUB</div>
+                <h3 class="campaign-title">Fortnightly Event Engine</h3>
+                <p>Built consistent event schedule that became primary revenue driver, creating predictable pipeline through community-led growth strategy.</p>
+                <div class="campaign-metrics">
+                    <span class="metric success">44% Revenue</span>
+                    <span class="metric success">100% ARR Growth</span>
+                </div>
+            </div>
+            
+            <div class="campaign-card fade-in">
+                <div class="campaign-company">FREELANCE</div>
+                <h3 class="campaign-title">AI-Driven ABM Innovation</h3>
+                <p>Built dynamic microsites with custom ROI calculators for target accounts, using AI for hyper-personalization at scale.</p>
+                <div class="campaign-metrics">
+                    <span class="metric success">$2M+ Pipeline</span>
+                    <span class="metric success">OpenAI Opp</span>
+                </div>
+            </div>
+            
+            <div class="campaign-card fade-in">
+                <div class="campaign-company">INVESTORHUB</div>
+                <h3 class="campaign-title">Category Creation Strategy</h3>
+                <p>Created "Direct-to-Investor Marketing" category, educated market on "mid register" concept, halving sales cycles.</p>
+                <div class="campaign-metrics">
+                    <span class="metric success">-50% Sales Cycle</span>
+                    <span class="metric warning">Market Leader</span>
+                </div>
+            </div>
+            
+            <div class="campaign-card fade-in">
+                <div class="campaign-company">MULTIPLE</div>
+                <h3 class="campaign-title">AI Process Innovation</h3>
+                <p>Adopted GenAI from day one to create processes that 5x team output, from content creation to campaign optimization.</p>
+                <div class="campaign-metrics">
+                    <span class="metric success">5x Output</span>
+                    <span class="metric success">Since Day 1</span>
+                </div>
+            </div>
+            
+            <div class="campaign-card fade-in">
+                <div class="campaign-company">SPOTME</div>
+                <h3 class="campaign-title">Technical Product GTM</h3>
+                <p>Launched deeply technical event platform to enterprise buyers, creating educational content that drove adoption.</p>
+                <div class="campaign-metrics">
+                    <span class="metric success">Enterprise Wins</span>
+                    <span class="metric warning">9.6% Over Target</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="section-header fade-in">
+            <h2>Technical Marketing Expertise</h2>
+            <p>The perfect blend of strategic thinking and technical execution</p>
+        </div>
+        
+        <div class="skills-grid">
+            <div class="skill-category fade-in">
+                <h3>Field Marketing & Demand Gen</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">ABM Strategy</span>
+                    <span class="skill-tag">Event Marketing</span>
+                    <span class="skill-tag">Pipeline Attribution</span>
+                    <span class="skill-tag">Sales Enablement</span>
+                    <span class="skill-tag">Partner Marketing</span>
+                </div>
+            </div>
+            
+            <div class="skill-category fade-in">
+                <h3>Marketing Technology</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">HubSpot</span>
+                    <span class="skill-tag">Salesforce</span>
+                    <span class="skill-tag">API Integration</span>
+                    <span class="skill-tag">Marketing Automation</span>
+                    <span class="skill-tag">GA4 & Analytics</span>
+                </div>
+            </div>
+            
+            <div class="skill-category fade-in">
+                <h3>AI & Innovation</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Generative AI</span>
+                    <span class="skill-tag">Dynamic Content</span>
+                    <span class="skill-tag">Personalization</span>
+                    <span class="skill-tag">Claude & ChatGPT</span>
+                    <span class="skill-tag">Workflow Automation</span>
+                </div>
+            </div>
+            
+            <div class="skill-category fade-in">
+                <h3>Regional Expertise</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">EMEA Markets</span>
+                    <span class="skill-tag">Localization</span>
+                    <span class="skill-tag">Cultural Nuance</span>
+                    <span class="skill-tag">Multi-region Ops</span>
+                    <span class="skill-tag">Remote Leadership</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Chart -->
+    <section id="performance" class="chart-section">
+        <div class="section-header fade-in">
+            <h2>Consistent Revenue Impact</h2>
+            <p>Track record of connecting marketing directly to business growth</p>
+        </div>
+        
+        <div class="chart-container fade-in">
+            <canvas id="performanceChart"></canvas>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta">
+        <div class="fade-in">
+            <h2>Let's Build Retool's EMEA Success Story</h2>
+            <p>Ready to show Europe the transformative power of building and deploying AI-powered software</p>
+            <div class="cta-buttons">
+                <a href="mailto:tom.uhlhorn@gmail.com" class="btn btn-primary">
+                    <span>Get in Touch</span>
+                    <span>→</span>
+                </a>
+                <a href="https://linkedin.com/in/tomuhlhorn" class="btn btn-secondary" target="_blank">
+                    <span>LinkedIn Profile</span>
+                    <span>↗</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+      
+        // Add hover effects to campaign cards
+        document.querySelectorAll('.campaign-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#FAFAFA';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '';
+            });
+        });
+    </script>
+</body>
+</html>
